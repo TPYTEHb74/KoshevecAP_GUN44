@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea974133cc524f4fa3d58606385b507, type: 3}
+  m_Name: RusherConfig
+  m_EditorClassIdentifier: 
+  _enemyType: 0
+  _maxHealth: 80
+  _patrolSpeed: 2.5
+  _chaseSpeed: 5.5
+  _rotationSpeed: 8
+  _viewRadius: 18
+  _viewAngle: 110
+  _hearingRadius: 6
+  _visionCheckInterval: 0.15
+  _targetMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _obstacleMask:
+    serializedVersion: 2
+    m_Bits: 256
+  _attackRange: 2
+  _preferredCombatDistance: 12
+  _attackDamage: 20
+  _attackCooldown: 1.2
+  _leadPredictionFactor: 0.35
