@@ -15,6 +15,7 @@ namespace Game.Weapons
         [SerializeField] private List<WeaponConfig> _weapons;
         [SerializeField] private Transform _muzzlePoint;
         [SerializeField] private LineRenderer _railgunLineRenderer;
+        [SerializeField] private AudioSource _audioSource;
 
         [Header("Melee Attack (6th Weapon - Key V)")]
         [SerializeField] private float _meleeDamage = 55f;
@@ -219,6 +220,13 @@ namespace Game.Weapons
 
             strategy.ExecuteShot(weapon, _muzzlePoint, aimOrigin, aimDirection, _currentSpread);
             _currentSpread = Mathf.Min(weapon.MaxSpreadAngle, _currentSpread + weapon.SpreadIncreasePerShot);
+
+            if (_audioSource != null && weapon.FireSound != null)
+            {
+                _audioSource.pitch = UnityEngine.Random.Range(0.92f, 1.08f);
+                _audioSource.PlayOneShot(weapon.FireSound);
+            }
+
         }
 
         private void HandleReloadPressed()

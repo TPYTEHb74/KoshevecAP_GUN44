@@ -53,6 +53,7 @@ MonoBehaviour:
   _hitMask:
     serializedVersion: 2
     m_Bits: 384
+  _tracerPrefab: {fileID: 0}
   _magazineSize: 12
   _maxReserveAmmo: 60
   _reloadDuration: 1.5
@@ -61,3 +62,4 @@ MonoBehaviour:
   _overheatCooldownDuration: 2.5
   _projectilePrefab: {fileID: 0}
   _projectileSpeed: 25
+  _fireSound: {fileID: 8300000, guid: 8297b09be75681b47a0e129f2f01c4f1, type: 3}

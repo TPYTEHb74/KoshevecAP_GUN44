@@ -15,6 +15,7 @@ namespace Game.Weapons
         [SerializeField] private float _fuseTime = 3f;
         [SerializeField] private LayerMask _damageMask;
         [SerializeField] private LayerMask _obstacleMask;
+        [SerializeField] private GameObject _explosionVfxPrefab;
 
         private readonly Collider[] _hitColliders = new Collider[32];
         private IPoolService _poolService;
@@ -84,6 +85,12 @@ namespace Game.Weapons
             }
 
             _hasExploded = true;
+
+            if (_explosionVfxPrefab != null)
+            {
+                Instantiate(_explosionVfxPrefab, transform.position, Quaternion.identity);
+            }
+
             Vector3 center = transform.position;
 
             int count = Physics.OverlapSphereNonAlloc(center, _explosionRadius, _hitColliders, _damageMask);

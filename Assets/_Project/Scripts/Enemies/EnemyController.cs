@@ -1,7 +1,8 @@
-using System;
+using DG.Tweening;
 using Game.Infrastructure;
 using Game.Player;
 using Game.Weapons;
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using Zenject;
@@ -258,6 +259,7 @@ namespace Game.Enemies
             }
 
             transform.localScale = new Vector3(1f, 0.3f, 1f);
+            transform.DOScale(Vector3.zero, 0.5f).SetDelay(2f).SetLink(gameObject);
         }
 
         private void OnDrawGizmosSelected()

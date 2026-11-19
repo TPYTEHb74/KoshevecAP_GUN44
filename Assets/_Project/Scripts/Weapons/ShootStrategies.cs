@@ -1,6 +1,7 @@
 using System;
 using Game.Infrastructure;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 
 namespace Game.Weapons
 {
@@ -141,7 +142,9 @@ namespace Game.Weapons
             {
                 _beamRenderer.SetPosition(0, muzzlePoint.position);
                 _beamRenderer.SetPosition(1, endPoint);
+                FlashBeamAsync(_beamRenderer).Forget();
             }
+
 
             Debug.DrawLine(muzzlePoint.position, endPoint, Color.cyan, 0.5f);
         }
@@ -151,5 +154,16 @@ namespace Game.Weapons
             public static readonly RaycastDistanceComparer Instance = new RaycastDistanceComparer();
             public int Compare(RaycastHit x, RaycastHit y) => x.distance.CompareTo(y.distance);
         }
+
+        private async UniTaskVoid FlashBeamAsync(LineRenderer renderer)
+        {
+            renderer.enabled = true;
+            await UniTask.Delay(120, cancellationToken: renderer.GetCancellationTokenOnDestroy());
+            if (renderer != null)
+            {
+                renderer.enabled = false;
+            }
+        }
+
     }
 }

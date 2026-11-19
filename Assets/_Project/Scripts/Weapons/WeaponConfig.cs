@@ -39,6 +39,7 @@ namespace Game.Weapons
         [SerializeField] private float _spreadRecoverySpeed = 3f;
         [SerializeField] private AnimationCurve _damageFalloff = AnimationCurve.Linear(0f, 1f, 1f, 1f);
         [SerializeField] private LayerMask _hitMask;
+        [SerializeField] private BulletTracer _tracerPrefab;
 
         [Header("Ammo & Reload / Overheat")]
         [SerializeField] private int _magazineSize = 12;
@@ -51,9 +52,10 @@ namespace Game.Weapons
         [Header("Projectile Settings (For Grenade Launcher)")]
         [SerializeField] private GrenadeProjectile _projectilePrefab;
         [SerializeField] private float _projectileSpeed = 25f;
-
-        [SerializeField] private BulletTracer _tracerPrefab;
-
+      
+        [Header("Audio")]
+        [SerializeField] private AudioClip _fireSound;
+      
         public string WeaponName => _weaponName;
         public WeaponFireType FireType => _fireType;
         public ReloadType ReloadType => _reloadType;
@@ -79,5 +81,6 @@ namespace Game.Weapons
         public GrenadeProjectile ProjectilePrefab => _projectilePrefab;
         public float ProjectileSpeed => _projectileSpeed;
         public BulletTracer TracerPrefab => _tracerPrefab;
+        public AudioClip FireSound => _fireSound;
     }
 }
