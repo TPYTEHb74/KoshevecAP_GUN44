@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6990258103531399417}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.769, y: -3.242, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4882984276440051701
 SpriteRenderer:
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <DieEffect>k__BackingField: {fileID: 0}
-  <DieSound>k__BackingField: {fileID: 0}
+  <DieSound>k__BackingField: {fileID: 8300000, guid: f9517356afb533a41b9e7cb6f155031e, type: 3}
 --- !u!114 &2837240327265897810
 MonoBehaviour:
   m_ObjectHideFlags: 0
